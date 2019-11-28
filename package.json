@@ -1,0 +1,33 @@
+{
+  "name": "agurk-shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared code & types for agurk",
+  "author": "Simon Müller",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist",
+    "test": "jest --config=.jest.json --silent",
+    "lint": "eslint src/**/*.ts test/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts test/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/hapi__joi": "^15.0.3",
+    "@types/jest": "^24.0.17",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.8.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@hapi/joi": "^15.1.0"
+  }
+}
