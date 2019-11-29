@@ -1,4 +1,5 @@
 # Agurk Shared
+![](https://github.com/SimonMueller/agurk-shared/workflows/Node%20CI/badge.svg)
 
 Shared code & types for agurk.
 
