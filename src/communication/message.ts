@@ -1,10 +1,9 @@
 import { Message } from '../types/message';
-import { MessageType } from '../types/messageType';
+import MessageName from './messageName';
 
-// eslint-disable-next-line import/prefer-default-export
-export function create<T>(messageType: MessageType, data?: T): Message<T> {
+export default function create<T>(messageName: MessageName, data?: T): Message<T> {
   return {
-    type: messageType.name,
+    name: messageName,
     data,
   };
 }

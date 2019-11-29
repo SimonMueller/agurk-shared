@@ -1,6 +1,6 @@
 {
   "name": "agurk-shared",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Shared code & types for agurk",
   "author": "Simon Müller",
@@ -15,7 +15,6 @@
     "lint:fix": "eslint --fix src/**/*.ts test/**/*.ts"
   },
   "devDependencies": {
-    "@types/hapi__joi": "^15.0.3",
     "@types/jest": "^24.0.17",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
@@ -27,7 +26,5 @@
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
   },
-  "dependencies": {
-    "@hapi/joi": "^15.1.0"
-  }
+  "dependencies": {}
 }

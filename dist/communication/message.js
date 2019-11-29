@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// eslint-disable-next-line import/prefer-default-export
-function create(messageType, data) {
+function create(messageName, data) {
     return {
-        type: messageType.name,
+        name: messageName,
         data,
     };
 }
-exports.create = create;
+exports.default = create;

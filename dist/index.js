@@ -1,14 +1,12 @@
 "use strict";
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const messageTypes = __importStar(require("./communication/messageTypes"));
-exports.messageTypes = messageTypes;
+const messageName_1 = __importDefault(require("./communication/messageName"));
+exports.MessageName = messageName_1.default;
+const message_1 = __importDefault(require("./communication/message"));
+exports.createMessage = message_1.default;
 var card_1 = require("./game/card");
 exports.createJokerCard = card_1.createJokerCard;
 exports.compareRanks = card_1.compareRanks;
@@ -17,5 +15,3 @@ exports.createSuitCard = card_1.createSuitCard;
 exports.Colors = card_1.Colors;
 exports.Suits = card_1.Suits;
 exports.CardKind = card_1.CardKind;
-var message_1 = require("./communication/message");
-exports.createMessage = message_1.create;
