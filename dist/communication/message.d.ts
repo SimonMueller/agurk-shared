@@ -1,3 +1,3 @@
 import { Message } from '../types/message';
-import { MessageType } from '../types/messageType';
-export declare function create<T>(messageType: MessageType, data?: T): Message<T>;
+import MessageName from './messageName';
+export default function create<T>(messageName: MessageName, data?: T): Message<T>;

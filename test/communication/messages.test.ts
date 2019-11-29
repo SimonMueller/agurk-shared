@@ -1,5 +1,5 @@
-import { create } from '../../src/communication/message';
-import * as messageTypes from '../../src/communication/messageTypes';
+import createMessage from '../../src/communication/message';
+import MessageName from '../../src/communication/messageName';
 import { createSuitCard, Suits } from '../../src/game/card';
 import { OutPlayer, PlayerId } from '../../src/types/player';
 import { Penalty } from '../../src/types/penalty';
@@ -10,26 +10,26 @@ describe('create message', () => {
   test('broadcast players game message with type and players data', () => {
     const players: PlayerId[] = ['player'];
 
-    expect(create(messageTypes.BROADCAST_PLAYERS, players))
+    expect(createMessage(MessageName.BROADCAST_PLAYERS, players))
       .toEqual({
-        type: messageTypes.BROADCAST_PLAYERS.name,
+        name: MessageName.BROADCAST_PLAYERS,
         data: players,
       });
   });
 
   test('broadcast start game message with only type', () => {
-    expect(create(messageTypes.BROADCAST_START_GAME))
+    expect(createMessage(MessageName.BROADCAST_START_GAME))
       .toEqual({
-        type: messageTypes.BROADCAST_START_GAME.name,
+        name: MessageName.BROADCAST_START_GAME,
       });
   });
 
   test('broadcast game error message with type and game error data', () => {
     const error = { error: 'something is wrong' };
 
-    expect(create(messageTypes.BROADCAST_GAME_ERROR, error))
+    expect(createMessage(MessageName.BROADCAST_GAME_ERROR, error))
       .toEqual({
-        type: messageTypes.BROADCAST_GAME_ERROR.name,
+        name: MessageName.BROADCAST_GAME_ERROR,
         data: error,
       });
   });
@@ -38,9 +38,9 @@ describe('create message', () => {
   test('deal cards message with type and cards data', () => {
     const cards: Card[] = [createSuitCard(2, Suits.DIAMONDS)];
 
-    expect(create(messageTypes.DEAL_CARDS, cards))
+    expect(createMessage(MessageName.DEAL_CARDS, cards))
       .toEqual({
-        type: messageTypes.DEAL_CARDS.name,
+        name: MessageName.DEAL_CARDS,
         data: cards,
       });
   });
@@ -48,26 +48,26 @@ describe('create message', () => {
   test('broadcast player order message with type and player order data', () => {
     const players: PlayerId[] = ['player1', 'player2'];
 
-    expect(create(messageTypes.BROADCAST_PLAYER_ORDER, players))
+    expect(createMessage(MessageName.BROADCAST_PLAYER_ORDER, players))
       .toEqual({
-        type: messageTypes.BROADCAST_PLAYER_ORDER.name,
+        name: MessageName.BROADCAST_PLAYER_ORDER,
         data: players,
       });
   });
 
   test('request cards message with only type', () => {
-    expect(create(messageTypes.REQUEST_CARDS))
+    expect(createMessage(MessageName.REQUEST_CARDS))
       .toEqual({
-        type: messageTypes.REQUEST_CARDS.name,
+        name: MessageName.REQUEST_CARDS,
       });
   });
 
   test('played cards message with type and played cards data', () => {
     const cards: Card[] = [createSuitCard(2, Suits.CLUBS)];
 
-    expect(create(messageTypes.PLAYED_CARDS, cards))
+    expect(createMessage(MessageName.PLAYED_CARDS, cards))
       .toEqual({
-        type: messageTypes.PLAYED_CARDS.name,
+        name: MessageName.PLAYED_CARDS,
         data: cards,
       });
   });
@@ -75,9 +75,9 @@ describe('create message', () => {
   test('broadcast turn played message with type and turn data', () => {
     const turn: ValidatedTurn = { cards: [createSuitCard(2, Suits.HEARTS)], playerId: 'test', valid: true };
 
-    expect(create(messageTypes.BROADCAST_PLAYER_TURN, turn))
+    expect(createMessage(MessageName.BROADCAST_PLAYER_TURN, turn))
       .toEqual({
-        type: messageTypes.BROADCAST_PLAYER_TURN.name,
+        name: MessageName.BROADCAST_PLAYER_TURN,
         data: turn,
       });
   });
@@ -85,9 +85,9 @@ describe('create message', () => {
   test('broadcast error turn message with type and turn error including player id', () => {
     const turnError: TurnError = { message: 'an error in a player turn occured', playerId: 'test' };
 
-    expect(create(messageTypes.BROADCAST_PLAYER_TURN_ERROR, turnError))
+    expect(createMessage(MessageName.BROADCAST_PLAYER_TURN_ERROR, turnError))
       .toEqual({
-        type: messageTypes.BROADCAST_PLAYER_TURN_ERROR.name,
+        name: MessageName.BROADCAST_PLAYER_TURN_ERROR,
         data: turnError,
       });
   });
@@ -95,9 +95,9 @@ describe('create message', () => {
   test('broadcast round winner message with type and winner data', () => {
     const winner: PlayerId = 'player2';
 
-    expect(create(messageTypes.BROADCAST_ROUND_WINNER, winner))
+    expect(createMessage(MessageName.BROADCAST_ROUND_WINNER, winner))
       .toEqual({
-        type: messageTypes.BROADCAST_ROUND_WINNER.name,
+        name: MessageName.BROADCAST_ROUND_WINNER,
         data: winner,
       });
   });
@@ -105,9 +105,9 @@ describe('create message', () => {
   test('broadcast penalties message with type and penalties data', () => {
     const penalties: Penalty[] = [{ playerId: 'tester', card: createSuitCard(12, Suits.HEARTS) }];
 
-    expect(create(messageTypes.BROADCAST_PENALTIES, penalties))
+    expect(createMessage(MessageName.BROADCAST_PENALTIES, penalties))
       .toEqual({
-        type: messageTypes.BROADCAST_PENALTIES.name,
+        name: MessageName.BROADCAST_PENALTIES,
         data: penalties,
       });
   });
@@ -115,9 +115,9 @@ describe('create message', () => {
   test('broadcast out players message with type and out players data', () => {
     const outPlayers: OutPlayer[] = [{ id: 'outPlayer', reason: 'cheating' }];
 
-    expect(create(messageTypes.BROADCAST_OUT_PLAYERS, outPlayers))
+    expect(createMessage(MessageName.BROADCAST_OUT_PLAYERS, outPlayers))
       .toEqual({
-        type: messageTypes.BROADCAST_OUT_PLAYERS.name,
+        name: MessageName.BROADCAST_OUT_PLAYERS,
         data: outPlayers,
       });
   });
@@ -125,54 +125,54 @@ describe('create message', () => {
   test('broadcast game winner message with type and game winner data', () => {
     const winner: PlayerId = 'player2';
 
-    expect(create(messageTypes.BROADCAST_GAME_WINNER, winner))
+    expect(createMessage(MessageName.BROADCAST_GAME_WINNER, winner))
       .toEqual({
-        type: messageTypes.BROADCAST_GAME_WINNER.name,
+        name: MessageName.BROADCAST_GAME_WINNER,
         data: winner,
       });
   });
 
   test('broadcast end round message with only type', () => {
-    expect(create(messageTypes.BROADCAST_END_ROUND))
+    expect(createMessage(MessageName.BROADCAST_END_ROUND))
       .toEqual({
-        type: messageTypes.BROADCAST_END_ROUND.name,
+        name: MessageName.BROADCAST_END_ROUND,
       });
   });
 
   test('broadcast end game message with only type', () => {
-    expect(create(messageTypes.BROADCAST_END_GAME))
+    expect(createMessage(MessageName.BROADCAST_END_GAME))
       .toEqual({
-        type: messageTypes.BROADCAST_END_GAME.name,
+        name: MessageName.BROADCAST_END_GAME,
       });
   });
 
   test('broadcast end cycle message with only type', () => {
-    expect(create(messageTypes.BROADCAST_END_CYCLE))
+    expect(createMessage(MessageName.BROADCAST_END_CYCLE))
       .toEqual({
-        type: messageTypes.BROADCAST_END_CYCLE.name,
+        name: MessageName.BROADCAST_END_CYCLE,
       });
   });
 
   test('broadcast start round message with only type', () => {
-    expect(create(messageTypes.BROADCAST_START_ROUND))
+    expect(createMessage(MessageName.BROADCAST_START_ROUND))
       .toEqual({
-        type: messageTypes.BROADCAST_START_ROUND.name,
+        name: MessageName.BROADCAST_START_ROUND,
       });
   });
 
   test('broadcast start cycle message with only type', () => {
-    expect(create(messageTypes.BROADCAST_START_CYCLE))
+    expect(createMessage(MessageName.BROADCAST_START_CYCLE))
       .toEqual({
-        type: messageTypes.BROADCAST_START_CYCLE.name,
+        name: MessageName.BROADCAST_START_CYCLE,
       });
   });
 
   test('broadcast start player turn message with type and data', () => {
     const playerId = 'someplayer';
 
-    expect(create(messageTypes.BROADCAST_START_PLAYER_TURN, playerId))
+    expect(createMessage(MessageName.BROADCAST_START_PLAYER_TURN, playerId))
       .toEqual({
-        type: messageTypes.BROADCAST_START_PLAYER_TURN.name,
+        name: MessageName.BROADCAST_START_PLAYER_TURN,
         data: playerId,
       });
   });
@@ -180,17 +180,17 @@ describe('create message', () => {
   test('error message with type and error data', () => {
     const error = { error: 'something is wrong' };
 
-    expect(create(messageTypes.ERROR, error))
+    expect(createMessage(MessageName.ERROR, error))
       .toEqual({
-        type: messageTypes.ERROR.name,
+        name: MessageName.ERROR,
         data: error,
       });
   });
 
   test('start game message with only type', () => {
-    expect(create(messageTypes.START_GAME))
+    expect(createMessage(MessageName.START_GAME))
       .toEqual({
-        type: messageTypes.START_GAME.name,
+        name: MessageName.START_GAME,
       });
   });
 });

@@ -1,4 +1,4 @@
 export interface Message<T> {
-  readonly type: string;
+  readonly name: string;
   readonly data?: T;
 }
