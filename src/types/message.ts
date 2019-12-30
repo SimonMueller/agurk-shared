@@ -85,6 +85,7 @@ interface BroadcastStartCycle {
 
 interface BroadcastStartPlayerTurn {
   readonly name: 'BROADCAST_START_PLAYER_TURN';
+  readonly data: PlayerId;
 }
 
 interface BroadcastEndCycle {
