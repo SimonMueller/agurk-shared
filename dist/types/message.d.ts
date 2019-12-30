@@ -4,76 +4,75 @@ import { TurnError, ValidatedTurn } from './turn';
 import { Penalty } from './penalty';
 import { Error } from './communication';
 export declare type Message = BroadcastPlayers | StartGame | BroadcastStartGame | DealtCards | BroadcastPlayerOrder | RequestCards | PlayCards | BroadcastPlayerTurn | BroadcastPlayerTurnError | BroadcastRoundWinner | BroadcastPenalties | BroadcastOutPlayers | BroadcastGameWinner | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastEndCycle | BroadcastStartPlayerTurn | BroadcastGameError | BroadcastEndGame;
-interface BroadcastPlayers {
+export interface BroadcastPlayers {
     readonly name: 'BROADCAST_PLAYERS';
     readonly data: PlayerId[];
 }
-interface StartGame {
+export interface StartGame {
     readonly name: 'START_GAME';
 }
-interface BroadcastStartGame {
+export interface BroadcastStartGame {
     readonly name: 'BROADCAST_START_GAME';
 }
-interface DealtCards {
+export interface DealtCards {
     readonly name: 'DEALT_CARDS';
     readonly data: Card[];
 }
-interface BroadcastPlayerOrder {
+export interface BroadcastPlayerOrder {
     readonly name: 'BROADCAST_PLAYER_ORDER';
     readonly data: PlayerId[];
 }
-interface RequestCards {
+export interface RequestCards {
     readonly name: 'REQUEST_CARDS';
 }
-interface PlayCards {
+export interface PlayCards {
     readonly name: 'PLAY_CARDS';
     readonly data: Card[];
 }
-interface BroadcastPlayerTurn {
+export interface BroadcastPlayerTurn {
     readonly name: 'BROADCAST_PLAYER_TURN';
     readonly data: ValidatedTurn;
 }
-interface BroadcastPlayerTurnError {
+export interface BroadcastPlayerTurnError {
     readonly name: 'BROADCAST_PLAYER_TURN_ERROR';
     readonly data: TurnError;
 }
-interface BroadcastRoundWinner {
+export interface BroadcastRoundWinner {
     readonly name: 'BROADCAST_ROUND_WINNER';
     readonly data: PlayerId;
 }
-interface BroadcastPenalties {
+export interface BroadcastPenalties {
     readonly name: 'BROADCAST_PENALTIES';
     readonly data: Penalty[];
 }
-interface BroadcastOutPlayers {
+export interface BroadcastOutPlayers {
     readonly name: 'BROADCAST_OUT_PLAYERS';
     readonly data: OutPlayer[];
 }
-interface BroadcastGameWinner {
+export interface BroadcastGameWinner {
     readonly name: 'BROADCAST_GAME_WINNER';
     readonly data: PlayerId;
 }
-interface BroadcastStartRound {
+export interface BroadcastStartRound {
     readonly name: 'BROADCAST_START_ROUND';
 }
-interface BroadcastEndRound {
+export interface BroadcastEndRound {
     readonly name: 'BROADCAST_END_ROUND';
 }
-interface BroadcastStartCycle {
+export interface BroadcastStartCycle {
     readonly name: 'BROADCAST_START_CYCLE';
 }
-interface BroadcastStartPlayerTurn {
+export interface BroadcastStartPlayerTurn {
     readonly name: 'BROADCAST_START_PLAYER_TURN';
     readonly data: PlayerId;
 }
-interface BroadcastEndCycle {
+export interface BroadcastEndCycle {
     readonly name: 'BROADCAST_END_CYCLE';
 }
-interface BroadcastEndGame {
+export interface BroadcastEndGame {
     readonly name: 'BROADCAST_END_GAME';
 }
-interface BroadcastGameError {
+export interface BroadcastGameError {
     readonly name: 'BROADCAST_GAME_ERROR';
     readonly data: Error;
 }
-export {};
