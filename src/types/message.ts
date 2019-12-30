@@ -2,11 +2,12 @@ import { OutPlayer, PlayerId } from './player';
 import { Card } from './card';
 import { TurnError, ValidatedTurn } from './turn';
 import { Penalty } from './penalty';
+import { Error } from './communication';
 
 export type Message = BroadcastPlayers | StartGame | BroadcastStartGame | DealtCards | BroadcastPlayerOrder |
   RequestCards | PlayCards | BroadcastPlayerTurn | BroadcastPlayerTurnError | BroadcastRoundWinner |
   BroadcastPenalties | BroadcastOutPlayers | BroadcastGameWinner | BroadcastStartRound | BroadcastEndRound |
-  BroadcastStartCycle | BroadcastEndCycle | BroadcastStartPlayerTurn | BroadcastGameError | Error | BroadcastEndGame;
+  BroadcastStartCycle | BroadcastEndCycle | BroadcastStartPlayerTurn | BroadcastGameError | BroadcastEndGame;
 
 interface BroadcastPlayers {
   readonly name: 'BROADCAST_PLAYERS';
@@ -92,11 +93,6 @@ interface BroadcastEndCycle {
 
 interface BroadcastEndGame {
   readonly name: 'BROADCAST_END_GAME';
-}
-
-interface Error {
-  readonly name: 'ERROR';
-  readonly data: Error;
 }
 
 interface BroadcastGameError {

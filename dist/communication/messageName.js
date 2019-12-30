@@ -21,7 +21,6 @@ var MessageName;
     MessageName["BROADCAST_START_PLAYER_TURN"] = "BROADCAST_START_PLAYER_TURN";
     MessageName["BROADCAST_END_CYCLE"] = "BROADCAST_END_CYCLE";
     MessageName["BROADCAST_END_GAME"] = "BROADCAST_END_GAME";
-    MessageName["ERROR"] = "ERROR";
     MessageName["BROADCAST_GAME_ERROR"] = "BROADCAST_GAME_ERROR";
 })(MessageName || (MessageName = {}));
 exports.default = MessageName;
