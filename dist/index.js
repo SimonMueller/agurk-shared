@@ -12,4 +12,5 @@ exports.cardEquals = card_1.equals;
 exports.createSuitCard = card_1.createSuitCard;
 exports.Colors = card_1.Colors;
 exports.Suits = card_1.Suits;
-exports.CardKind = card_1.CardKind;
+exports.JOKER_CARD_KIND = card_1.JOKER_CARD_KIND;
+exports.SUIT_CARD_KIND = card_1.SUIT_CARD_KIND;

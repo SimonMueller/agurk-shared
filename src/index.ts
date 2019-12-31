@@ -2,7 +2,7 @@ import MessageName from './communication/messageName';
 
 export { MessageName };
 export {
-  createJokerCard, compareRanks, equals as cardEquals, createSuitCard, Colors, Suits, CardKind,
+  createJokerCard, compareRanks, equals as cardEquals, createSuitCard, Colors, Suits, JOKER_CARD_KIND, SUIT_CARD_KIND,
 } from './game/card';
 export {
   Color, Card, JokerCard, JokerRank, Suit, SuitCard, SuitRank, Rank,

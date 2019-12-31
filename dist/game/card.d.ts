@@ -1,8 +1,6 @@
 import { Card, JokerCard, SuitCard, SuitRank, Color, Suit as CardSuit } from '../types/card';
-export declare enum CardKind {
-    Joker = "JOKER",
-    Suit = "SUIT"
-}
+export declare const JOKER_CARD_KIND = "JOKER";
+export declare const SUIT_CARD_KIND = "SUIT";
 export declare enum Suits {
     CLUBS = "CLUBS",
     SPADES = "SPADES",
