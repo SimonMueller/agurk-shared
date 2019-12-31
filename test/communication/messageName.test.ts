@@ -7,7 +7,7 @@ test('message types exist and correct name', () => {
   expect(MessageName.DEALT_CARDS).toEqual('DEALT_CARDS');
   expect(MessageName.BROADCAST_PLAYER_ORDER).toEqual('BROADCAST_PLAYER_ORDER');
   expect(MessageName.REQUEST_CARDS).toEqual('REQUEST_CARDS');
-  expect(MessageName.REQUEST_CARDS).toEqual('REQUEST_CARDS');
+  expect(MessageName.AVAILABLE_CARDS).toEqual('AVAILABLE_CARDS');
   expect(MessageName.BROADCAST_START_PLAYER_TURN).toEqual('BROADCAST_START_PLAYER_TURN');
   expect(MessageName.PLAY_CARDS).toEqual('PLAY_CARDS');
   expect(MessageName.BROADCAST_PLAYER_TURN).toEqual('BROADCAST_PLAYER_TURN');

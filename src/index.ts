@@ -13,6 +13,7 @@ export {
   RequestCards, PlayCards, BroadcastPlayerTurn, BroadcastPlayerTurnError, BroadcastRoundWinner,
   BroadcastPenalties, BroadcastOutPlayers, BroadcastGameWinner, BroadcastStartRound, BroadcastEndRound,
   BroadcastStartCycle, BroadcastEndCycle, BroadcastStartPlayerTurn, BroadcastGameError, BroadcastEndGame,
+  AvailableCards,
 } from './types/message';
 export { PlayerId, OutPlayer } from './types/player';
 export { Penalty } from './types/penalty';

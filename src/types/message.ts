@@ -7,7 +7,8 @@ import { Error } from './communication';
 export type Message = BroadcastPlayers | StartGame | BroadcastStartGame | DealtCards | BroadcastPlayerOrder |
   RequestCards | PlayCards | BroadcastPlayerTurn | BroadcastPlayerTurnError | BroadcastRoundWinner |
   BroadcastPenalties | BroadcastOutPlayers | BroadcastGameWinner | BroadcastStartRound | BroadcastEndRound |
-  BroadcastStartCycle | BroadcastEndCycle | BroadcastStartPlayerTurn | BroadcastGameError | BroadcastEndGame;
+  BroadcastStartCycle | BroadcastEndCycle | BroadcastStartPlayerTurn | BroadcastGameError | BroadcastEndGame |
+  AvailableCards;
 
 export interface BroadcastPlayers {
   readonly name: 'BROADCAST_PLAYERS';
@@ -34,6 +35,11 @@ export interface BroadcastPlayerOrder {
 
 export interface RequestCards {
   readonly name: 'REQUEST_CARDS';
+}
+
+export interface AvailableCards {
+  readonly name: 'AVAILABLE_CARDS';
+  readonly data: Card[];
 }
 
 export interface PlayCards {
