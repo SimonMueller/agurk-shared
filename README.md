@@ -1,4 +1,7 @@
 # Agurk Shared
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/SimonMueller/agurk-shared.svg)](https://greenkeeper.io/)
+
 ![](https://github.com/SimonMueller/agurk-shared/workflows/Node%20CI/badge.svg)
 
 Shared code & types for agurk.
