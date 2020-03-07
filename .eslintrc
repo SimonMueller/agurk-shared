@@ -7,7 +7,17 @@
   "parser": "@typescript-eslint/parser",
   "rules": {
     "max-len": ["error", { "code":  120}],
-    "func-style": ["error", "declaration", { "allowArrowFunctions": true }]
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "env": {
     "jest": true,
