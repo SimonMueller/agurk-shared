@@ -1,6 +1,6 @@
 {
   "name": "agurk-shared",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "description": "Shared code & types for agurk",
   "author": "Simon Müller",
@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
