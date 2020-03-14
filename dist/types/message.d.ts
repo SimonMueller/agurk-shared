@@ -5,10 +5,10 @@ import { Penalty } from './penalty';
 import { Error } from './communication';
 export declare type Message = StartGame | BroadcastStartGame | DealtCards | RequestCards | PlayCards | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastPlayerTurnError | BroadcastEndCycle | BroadcastStartPlayerTurn | BroadcastGameError | BroadcastEndGame | AvailableCards;
 export declare type MessageData = StartGameData | EndGameData | StartCycleData | EndCycleData | StartRoundData | EndRoundData;
-export interface StartGameData {
+export interface StartGame {
     readonly name: 'START_GAME';
 }
-export interface StartGame {
+export interface StartGameData {
     readonly players: PlayerId[];
 }
 export interface BroadcastStartGame {

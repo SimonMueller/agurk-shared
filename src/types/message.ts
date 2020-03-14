@@ -10,11 +10,11 @@ export type Message = StartGame | BroadcastStartGame | DealtCards | RequestCards
 
 export type MessageData = StartGameData | EndGameData | StartCycleData | EndCycleData | StartRoundData | EndRoundData;
 
-export interface StartGameData {
+export interface StartGame {
   readonly name: 'START_GAME';
 }
 
-export interface StartGame {
+export interface StartGameData {
   readonly players: PlayerId[];
 }
 
