@@ -6,4 +6,4 @@ export { Error } from './types/communication';
 export { Message, StartGame, BroadcastStartGame, DealtCards, RequestCards, PlayCards, BroadcastPlayerTurn, BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastStartPlayerTurn, BroadcastGameError, BroadcastEndGame, AvailableCards, } from './types/message';
 export { PlayerId, OutPlayer } from './types/player';
 export { Penalty } from './types/penalty';
-export { ValidatedTurn } from './types/turn';
+export { ValidatedTurn, TurnError } from './types/turn';
