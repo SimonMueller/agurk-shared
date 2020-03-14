@@ -47,7 +47,7 @@ export interface BroadcastEndRound {
     readonly data: {
         readonly winner: PlayerId;
         readonly penalties: Penalty[];
-        readonly outPlayers: PlayerId[];
+        readonly outPlayers: OutPlayer[];
     };
 }
 export interface BroadcastStartCycle {
