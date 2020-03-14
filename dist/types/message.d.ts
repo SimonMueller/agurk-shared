@@ -4,14 +4,16 @@ import { TurnError, ValidatedTurn } from './turn';
 import { Penalty } from './penalty';
 import { Error } from './communication';
 export declare type Message = StartGame | BroadcastStartGame | DealtCards | RequestCards | PlayCards | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastPlayerTurnError | BroadcastEndCycle | BroadcastStartPlayerTurn | BroadcastGameError | BroadcastEndGame | AvailableCards;
-export interface StartGame {
+export declare type MessageData = StartGameData | EndGameData | StartCycleData | EndCycleData | StartRoundData | EndRoundData;
+export interface StartGameData {
     readonly name: 'START_GAME';
+}
+export interface StartGame {
+    readonly players: PlayerId[];
 }
 export interface BroadcastStartGame {
     readonly name: 'BROADCAST_START_GAME';
-    readonly data: {
-        readonly players: PlayerId[];
-    };
+    readonly data: StartGameData;
 }
 export interface DealtCards {
     readonly name: 'DEALT_CARDS';
@@ -36,42 +38,47 @@ export interface BroadcastPlayerTurnError {
     readonly name: 'BROADCAST_PLAYER_TURN_ERROR';
     readonly data: TurnError;
 }
+export interface StartRoundData {
+    readonly players: PlayerId[];
+}
 export interface BroadcastStartRound {
     readonly name: 'BROADCAST_START_ROUND';
-    readonly data: {
-        readonly players: PlayerId[];
-    };
+    readonly data: StartRoundData;
+}
+export interface EndRoundData {
+    readonly winner: PlayerId;
+    readonly penalties: Penalty[];
+    readonly outPlayers: OutPlayer[];
 }
 export interface BroadcastEndRound {
     readonly name: 'BROADCAST_END_ROUND';
-    readonly data: {
-        readonly winner: PlayerId;
-        readonly penalties: Penalty[];
-        readonly outPlayers: OutPlayer[];
-    };
+    readonly data: EndRoundData;
+}
+export interface StartCycleData {
+    readonly orderedPlayers: PlayerId[];
 }
 export interface BroadcastStartCycle {
     readonly name: 'BROADCAST_START_CYCLE';
-    readonly data: {
-        readonly orderedPlayers: PlayerId[];
-    };
+    readonly data: StartCycleData;
 }
 export interface BroadcastStartPlayerTurn {
     readonly name: 'BROADCAST_START_PLAYER_TURN';
     readonly data: PlayerId;
 }
+export interface EndCycleData {
+    readonly outPlayers: OutPlayer[];
+    readonly highestTurnPlayers: PlayerId[];
+}
 export interface BroadcastEndCycle {
     readonly name: 'BROADCAST_END_CYCLE';
-    readonly data: {
-        readonly outPlayers: OutPlayer[];
-        readonly highestTurnPlayers: PlayerId[];
-    };
+    readonly data: EndCycleData;
+}
+export interface EndGameData {
+    readonly winner: PlayerId;
 }
 export interface BroadcastEndGame {
     readonly name: 'BROADCAST_END_GAME';
-    readonly data: {
-        readonly winner: PlayerId;
-    };
+    readonly data: EndGameData;
 }
 export interface BroadcastGameError {
     readonly name: 'BROADCAST_GAME_ERROR';
