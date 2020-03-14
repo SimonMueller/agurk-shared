@@ -3,7 +3,7 @@ import { PlayerId } from './player';
 
 export interface TurnError {
   readonly playerId: PlayerId;
-  readonly error: string;
+  readonly message: string;
 }
 
 export interface ValidatedTurn {
