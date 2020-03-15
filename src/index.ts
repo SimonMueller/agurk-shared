@@ -9,9 +9,9 @@ export {
 } from './types/card';
 export { Error } from './types/communication';
 export {
-  Message, StartGame, BroadcastStartGame, DealtCards, RequestCards, PlayCards, BroadcastPlayerTurn,
-  BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastStartPlayerTurn,
-  BroadcastGameError, BroadcastEndGame, AvailableCards, EndRoundData, StartRoundData, EndCycleData, StartCycleData,
+  Message, StartGame, BroadcastStartGame, BroadcastRequestCards, PlayCards, BroadcastPlayerTurn,
+  BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastGameError,
+  BroadcastEndGame, AvailableCardsInHand, EndRoundData, StartRoundData, EndCycleData, StartCycleData,
   BroadcastPlayerTurnError, MessageData, EndGameData, StartGameData,
 } from './types/message';
 
