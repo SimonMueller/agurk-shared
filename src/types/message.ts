@@ -25,7 +25,6 @@ export interface BroadcastStartGame {
 
 export interface RequestCards {
   readonly name: 'REQUEST_CARDS';
-  readonly data: PlayerId;
 }
 
 export interface BroadcastStartPlayerTurn {
