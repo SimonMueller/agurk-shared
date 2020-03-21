@@ -10,11 +10,11 @@ export {
 export { Error } from './types/communication';
 export {
   Message, StartGame, BroadcastStartGame, RequestCards, PlayCards, BroadcastPlayerTurn, BroadcastStartPlayerTurn,
-  BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastGameError,
-  BroadcastEndGame, AvailableCardsInHand, EndRoundData, StartRoundData, EndCycleData, StartCycleData,
-  BroadcastPlayerTurnError, MessageData, EndGameData, StartGameData,
+  BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastEndGame,
+  AvailableCardsInHand, EndRoundData, StartRoundData, EndCycleData, StartCycleData, MessageData,
+  EndGameData, StartGameData,
 } from './types/message';
 
 export { PlayerId, OutPlayer } from './types/player';
 export { Penalty } from './types/penalty';
-export { ValidatedTurn, TurnError } from './types/turn';
+export { ValidatedTurn, InvalidTurn, ValidTurn } from './types/turn';

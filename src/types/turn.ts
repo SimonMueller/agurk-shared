@@ -1,14 +1,17 @@
 import { Card } from './card';
 import { PlayerId } from './player';
 
-export interface TurnError {
-  readonly playerId: PlayerId;
-  readonly message: string;
-}
-
-export interface ValidatedTurn {
+export interface ValidTurn {
   readonly cards: Card[];
   readonly playerId: PlayerId;
-  readonly valid: boolean;
-  readonly invalidReason?: string;
+  readonly valid: true;
 }
+
+export interface InvalidTurn {
+  readonly cards: Card[];
+  readonly playerId: PlayerId;
+  readonly valid: false;
+  readonly invalidReason: string;
+}
+
+export type ValidatedTurn = InvalidTurn | ValidTurn;

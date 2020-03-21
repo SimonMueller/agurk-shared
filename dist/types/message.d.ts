@@ -1,9 +1,9 @@
 import { OutPlayer, PlayerId } from './player';
 import { Card } from './card';
-import { TurnError, ValidatedTurn } from './turn';
+import { ValidatedTurn } from './turn';
 import { Penalty } from './penalty';
 import { Error } from './communication';
-export declare type Message = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastPlayerTurnError | BroadcastEndCycle | BroadcastGameError | BroadcastEndGame | AvailableCardsInHand;
+export declare type Message = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand;
 export declare type MessageData = StartGameData | EndGameData | StartCycleData | EndCycleData | StartRoundData | EndRoundData;
 export interface StartGame {
     readonly name: 'START_GAME';
@@ -33,10 +33,6 @@ export interface PlayCards {
 export interface BroadcastPlayerTurn {
     readonly name: 'BROADCAST_PLAYER_TURN';
     readonly data: ValidatedTurn;
-}
-export interface BroadcastPlayerTurnError {
-    readonly name: 'BROADCAST_PLAYER_TURN_ERROR';
-    readonly data: TurnError;
 }
 export interface StartRoundData {
     readonly players: PlayerId[];
@@ -74,9 +70,5 @@ export interface EndGameData {
 }
 export interface BroadcastEndGame {
     readonly name: 'BROADCAST_END_GAME';
-    readonly data: EndGameData;
-}
-export interface BroadcastGameError {
-    readonly name: 'BROADCAST_GAME_ERROR';
-    readonly data: Error;
+    readonly data: EndGameData | Error;
 }
