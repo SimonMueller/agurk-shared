@@ -11,7 +11,7 @@ export { Error } from './types/communication';
 export {
   Message, StartGame, BroadcastStartGame, RequestCards, PlayCards, BroadcastPlayerTurn, BroadcastStartPlayerTurn,
   BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastEndGame,
-  AvailableCardsInHand, EndRoundData, StartRoundData, EndCycleData, StartCycleData, MessageData,
+  AvailableCardsInHand, EndRoundData, EndGameErrorData, StartRoundData, EndCycleData, StartCycleData, MessageData,
   EndGameData, StartGameData,
 } from './types/message';
 

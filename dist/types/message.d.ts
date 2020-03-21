@@ -4,7 +4,7 @@ import { ValidatedTurn } from './turn';
 import { Penalty } from './penalty';
 import { Error } from './communication';
 export declare type Message = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand;
-export declare type MessageData = StartGameData | EndGameData | StartCycleData | EndCycleData | StartRoundData | EndRoundData;
+export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData;
 export interface StartGame {
     readonly name: 'START_GAME';
 }
@@ -66,9 +66,14 @@ export interface BroadcastEndCycle {
     readonly data: EndCycleData;
 }
 export interface EndGameData {
+    readonly isValid: true;
     readonly winner: PlayerId;
+}
+export interface EndGameErrorData {
+    readonly isValid: false;
+    readonly error: Error;
 }
 export interface BroadcastEndGame {
     readonly name: 'BROADCAST_END_GAME';
-    readonly data: EndGameData | Error;
+    readonly data: EndGameData | EndGameErrorData;
 }
