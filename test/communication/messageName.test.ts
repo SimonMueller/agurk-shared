@@ -1,6 +1,8 @@
 import MessageName from '../../src/communication/messageName';
 
 test('message types exist and correct name', () => {
+  expect(MessageName.REQUEST_AUTHENTICATION).toEqual('REQUEST_AUTHENTICATION');
+  expect(MessageName.AUTHENTICATE).toEqual('AUTHENTICATE');
   expect(MessageName.START_GAME).toEqual('START_GAME');
   expect(MessageName.BROADCAST_START_GAME).toEqual('BROADCAST_START_GAME');
   expect(MessageName.REQUEST_CARDS).toEqual('REQUEST_CARDS');

@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var MessageName;
 (function (MessageName) {
+    MessageName["REQUEST_AUTHENTICATION"] = "REQUEST_AUTHENTICATION";
+    MessageName["AUTHENTICATE"] = "AUTHENTICATE";
     MessageName["BROADCAST_PLAYERS"] = "BROADCAST_PLAYERS";
     MessageName["START_GAME"] = "START_GAME";
     MessageName["BROADCAST_START_GAME"] = "BROADCAST_START_GAME";
