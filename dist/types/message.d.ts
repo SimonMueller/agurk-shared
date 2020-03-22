@@ -9,7 +9,7 @@ interface Message<T extends MessageName> {
     readonly data?: MessageData;
 }
 export declare type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
-export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | AuthenticationData;
+export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn;
 export declare type StartGame = Message<typeof MessageName.START_GAME>;
 export interface StartGameData {
     readonly players: PlayerId[];
@@ -68,11 +68,8 @@ export interface EndGameErrorData {
 export interface BroadcastEndGame extends Message<typeof MessageName.BROADCAST_END_GAME> {
     readonly data: EndGameData | EndGameErrorData;
 }
-export interface AuthenticationData {
-    readonly jwt: string;
-}
 export interface Authenticate extends Message<typeof MessageName.AUTHENTICATE> {
-    readonly data: AuthenticationData;
+    readonly data: string;
 }
 export declare type RequestAuthentication = Message<typeof MessageName.REQUEST_AUTHENTICATION>;
 export {};

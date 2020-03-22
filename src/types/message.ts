@@ -15,7 +15,7 @@ export type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCa
   BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
 
 export type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData |
-  StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | AuthenticationData;
+  StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn;
 
 export type StartGame = Message<typeof MessageName.START_GAME>;
 
@@ -94,12 +94,8 @@ export interface BroadcastEndGame extends Message<typeof MessageName.BROADCAST_E
   readonly data: EndGameData | EndGameErrorData;
 }
 
-export interface AuthenticationData {
-  readonly jwt: string;
-}
-
 export interface Authenticate extends Message<typeof MessageName.AUTHENTICATE> {
-  readonly data: AuthenticationData;
+  readonly data: string;
 }
 
 export type RequestAuthentication = Message<typeof MessageName.REQUEST_AUTHENTICATION>;
