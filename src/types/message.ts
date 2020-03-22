@@ -12,7 +12,7 @@ interface Message<T extends MessageName> {
 
 export type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn |
   BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle |
-  BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand;
+  BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
 
 export type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData |
   StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | AuthenticationData;
