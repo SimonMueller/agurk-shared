@@ -4,6 +4,7 @@ export { createJokerCard, compareRanks, equals as cardEquals, createSuitCard, Co
 export { Color, Card, JokerCard, JokerRank, Suit, SuitCard, SuitRank, Rank, } from './types/card';
 export { Error } from './types/communication';
 export { GameMessage as Message, StartGame, BroadcastStartGame, RequestCards, PlayCards, BroadcastPlayerTurn, BroadcastStartPlayerTurn, BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastEndGame, AvailableCardsInHand, EndRoundData, EndGameErrorData, StartRoundData, EndCycleData, StartCycleData, MessageData, EndGameData, StartGameData, Authenticate, RequestAuthentication, } from './types/message';
+export { JwtPayload } from './types/authentication';
 export { PlayerId, OutPlayer } from './types/player';
 export { Penalty } from './types/penalty';
 export { ValidatedTurn, InvalidTurn, ValidTurn } from './types/turn';
