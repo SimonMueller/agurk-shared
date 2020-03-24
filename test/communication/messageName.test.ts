@@ -15,4 +15,5 @@ test('message types exist and correct name', () => {
   expect(MessageName.BROADCAST_END_CYCLE).toEqual('BROADCAST_END_CYCLE');
   expect(MessageName.BROADCAST_START_ROUND).toEqual('BROADCAST_START_ROUND');
   expect(MessageName.BROADCAST_START_CYCLE).toEqual('BROADCAST_START_CYCLE');
+  expect(MessageName.BROADCAST_LOBBY_PLAYERS).toEqual('BROADCAST_LOBBY_PLAYERS');
 });

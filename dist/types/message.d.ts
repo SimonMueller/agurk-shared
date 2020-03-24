@@ -8,8 +8,8 @@ interface Message<T extends MessageName> {
     readonly name: T;
     readonly data?: MessageData;
 }
-export declare type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
-export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn;
+export declare type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastLobbyPlayers | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
+export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[];
 export declare type StartGame = Message<typeof MessageName.START_GAME>;
 export interface StartGameData {
     readonly players: PlayerId[];
@@ -67,6 +67,9 @@ export interface EndGameErrorData {
 }
 export interface BroadcastEndGame extends Message<typeof MessageName.BROADCAST_END_GAME> {
     readonly data: EndGameData | EndGameErrorData;
+}
+export interface BroadcastLobbyPlayers extends Message<typeof MessageName.BROADCAST_LOBBY_PLAYERS> {
+    readonly data: PlayerId[];
 }
 export interface Authenticate extends Message<typeof MessageName.AUTHENTICATE> {
     readonly data: string;

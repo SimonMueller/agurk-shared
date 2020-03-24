@@ -3,7 +3,7 @@ export { MessageName };
 export { createJokerCard, compareRanks, equals as cardEquals, createSuitCard, Colors, Suits, JOKER_CARD_KIND, SUIT_CARD_KIND, } from './game/card';
 export { Color, Card, JokerCard, JokerRank, Suit, SuitCard, SuitRank, Rank, } from './types/card';
 export { Error } from './types/communication';
-export { GameMessage as Message, StartGame, BroadcastStartGame, RequestCards, PlayCards, BroadcastPlayerTurn, BroadcastStartPlayerTurn, BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastEndGame, AvailableCardsInHand, EndRoundData, EndGameErrorData, StartRoundData, EndCycleData, StartCycleData, MessageData, EndGameData, StartGameData, Authenticate, RequestAuthentication, } from './types/message';
+export { GameMessage as Message, StartGame, BroadcastStartGame, RequestCards, PlayCards, BroadcastPlayerTurn, BroadcastStartPlayerTurn, BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle, BroadcastEndGame, AvailableCardsInHand, EndRoundData, EndGameErrorData, StartRoundData, EndCycleData, StartCycleData, MessageData, EndGameData, StartGameData, Authenticate, RequestAuthentication, BroadcastLobbyPlayers, } from './types/message';
 export { JwtPayload } from './types/authentication';
 export { PlayerId, OutPlayer } from './types/player';
 export { Penalty } from './types/penalty';

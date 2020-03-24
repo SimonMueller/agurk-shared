@@ -17,5 +17,6 @@ var MessageName;
     MessageName["BROADCAST_START_CYCLE"] = "BROADCAST_START_CYCLE";
     MessageName["BROADCAST_END_CYCLE"] = "BROADCAST_END_CYCLE";
     MessageName["BROADCAST_END_GAME"] = "BROADCAST_END_GAME";
+    MessageName["BROADCAST_LOBBY_PLAYERS"] = "BROADCAST_LOBBY_PLAYERS";
 })(MessageName || (MessageName = {}));
 exports.default = MessageName;
