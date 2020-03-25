@@ -14,7 +14,7 @@ export {
   BroadcastEndGame, AvailableCardsInHand, EndRoundData, EndGameErrorData, StartRoundData, EndCycleData,
   StartCycleData, MessageData, EndGameData, StartGameData, Authenticate, RequestAuthentication, BroadcastLobbyPlayers,
 } from './types/message';
-export { JwtPayload } from './types/authentication';
+export { JwtPayload, AuthenticationBody } from './types/authentication';
 export { PlayerId, OutPlayer } from './types/player';
 export { Penalty } from './types/penalty';
 export { ValidatedTurn, InvalidTurn, ValidTurn } from './types/turn';
