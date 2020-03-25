@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var MessageName;
+(function (MessageName) {
+    MessageName["REQUEST_AUTHENTICATION"] = "REQUEST_AUTHENTICATION";
+    MessageName["AUTHENTICATE"] = "AUTHENTICATE";
+    MessageName["START_GAME"] = "START_GAME";
+    MessageName["BROADCAST_START_GAME"] = "BROADCAST_START_GAME";
+    MessageName["REQUEST_CARDS"] = "REQUEST_CARDS";
+    MessageName["BROADCAST_START_PLAYER_TURN"] = "BROADCAST_START_PLAYER_TURN";
+    MessageName["AVAILABLE_CARDS_IN_HAND"] = "AVAILABLE_CARDS_IN_HAND";
+    MessageName["PLAY_CARDS"] = "PLAY_CARDS";
+    MessageName["BROADCAST_PLAYER_TURN"] = "BROADCAST_PLAYER_TURN";
+    MessageName["BROADCAST_START_ROUND"] = "BROADCAST_START_ROUND";
+    MessageName["BROADCAST_END_ROUND"] = "BROADCAST_END_ROUND";
+    MessageName["BROADCAST_START_CYCLE"] = "BROADCAST_START_CYCLE";
+    MessageName["BROADCAST_END_CYCLE"] = "BROADCAST_END_CYCLE";
+    MessageName["BROADCAST_END_GAME"] = "BROADCAST_END_GAME";
+    MessageName["BROADCAST_LOBBY_PLAYERS"] = "BROADCAST_LOBBY_PLAYERS";
+})(MessageName || (MessageName = {}));
+exports.default = MessageName;
