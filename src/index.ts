@@ -13,6 +13,7 @@ export {
   BroadcastStartPlayerTurn, BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle,
   BroadcastEndGame, AvailableCardsInHand, EndRoundData, EndGameErrorData, StartRoundData, EndCycleData,
   StartCycleData, MessageData, EndGameData, StartGameData, Authenticate, RequestAuthentication, BroadcastLobbyPlayers,
+  RequestCardsData,
 } from './types/message';
 export { JwtPayload, AuthenticationBody } from './types/authentication';
 export { PlayerId, OutPlayer } from './types/player';

@@ -15,7 +15,7 @@ export type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCa
   BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
 
 export type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData |
-  StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[];
+  StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[] | RequestCardsData;
 
 export type StartGame = Message<typeof MessageName.START_GAME>;
 
@@ -27,8 +27,12 @@ export interface BroadcastStartGame extends Message<typeof MessageName.BROADCAST
   readonly data: StartGameData;
 }
 
-export interface RequestCards extends Message<typeof MessageName.REQUEST_CARDS> {
+export interface RequestCardsData {
   readonly timeoutInMillis: number;
+}
+
+export interface RequestCards extends Message<typeof MessageName.REQUEST_CARDS> {
+  readonly data: RequestCardsData;
 }
 
 export interface BroadcastStartPlayerTurn extends Message<typeof MessageName.BROADCAST_START_PLAYER_TURN> {

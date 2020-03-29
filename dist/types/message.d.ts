@@ -9,7 +9,7 @@ interface Message<T extends MessageName> {
     readonly data?: MessageData;
 }
 export declare type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastLobbyPlayers | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
-export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[];
+export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[] | RequestCardsData;
 export declare type StartGame = Message<typeof MessageName.START_GAME>;
 export interface StartGameData {
     readonly players: PlayerId[];
@@ -17,8 +17,11 @@ export interface StartGameData {
 export interface BroadcastStartGame extends Message<typeof MessageName.BROADCAST_START_GAME> {
     readonly data: StartGameData;
 }
-export interface RequestCards extends Message<typeof MessageName.REQUEST_CARDS> {
+export interface RequestCardsData {
     readonly timeoutInMillis: number;
+}
+export interface RequestCards extends Message<typeof MessageName.REQUEST_CARDS> {
+    readonly data: RequestCardsData;
 }
 export interface BroadcastStartPlayerTurn extends Message<typeof MessageName.BROADCAST_START_PLAYER_TURN> {
     readonly data: PlayerId;
