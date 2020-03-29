@@ -17,7 +17,9 @@ export interface StartGameData {
 export interface BroadcastStartGame extends Message<typeof MessageName.BROADCAST_START_GAME> {
     readonly data: StartGameData;
 }
-export declare type RequestCards = Message<typeof MessageName.REQUEST_CARDS>;
+export interface RequestCards extends Message<typeof MessageName.REQUEST_CARDS> {
+    readonly timeoutInMillis: number;
+}
 export interface BroadcastStartPlayerTurn extends Message<typeof MessageName.BROADCAST_START_PLAYER_TURN> {
     readonly data: PlayerId;
 }
