@@ -19,6 +19,7 @@ export interface BroadcastStartGame extends Message<typeof MessageName.BROADCAST
 }
 export interface RequestCardsData {
     readonly timeoutInMillis: number;
+    readonly retriesLeft: number;
 }
 export interface RequestCards extends Message<typeof MessageName.REQUEST_CARDS> {
     readonly data: RequestCardsData;
@@ -58,6 +59,7 @@ export interface BroadcastStartCycle extends Message<typeof MessageName.BROADCAS
 export interface EndCycleData {
     readonly outPlayers: OutPlayer[];
     readonly highestTurnPlayers: PlayerId[];
+    readonly delayAfterEndInMillis: number;
 }
 export interface BroadcastEndCycle extends Message<typeof MessageName.BROADCAST_END_CYCLE> {
     readonly data: EndCycleData;
