@@ -72,6 +72,7 @@ export interface BroadcastEndRound extends Message<typeof MessageName.BROADCAST_
 
 export interface StartCycleData {
   readonly orderedPlayers: PlayerId[];
+  readonly isLastOfRound: boolean;
 }
 
 export interface BroadcastStartCycle extends Message<typeof MessageName.BROADCAST_START_CYCLE> {
