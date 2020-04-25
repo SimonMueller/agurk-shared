@@ -7,7 +7,6 @@ export {
 export {
   Color, Card, JokerCard, JokerRank, Suit, SuitCard, SuitRank, Rank,
 } from './types/card';
-export { Error } from './types/communication';
 export {
   GameMessage as Message, StartGame, BroadcastStartGame, RequestCards, PlayCards, BroadcastPlayerTurn,
   BroadcastStartPlayerTurn, BroadcastStartRound, BroadcastEndRound, BroadcastStartCycle, BroadcastEndCycle,
