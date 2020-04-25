@@ -2,7 +2,6 @@ import { OutPlayer, PlayerId } from './player';
 import { Card } from './card';
 import { ValidatedTurn } from './turn';
 import { Penalty } from './penalty';
-import { Error } from './communication';
 import MessageName from '../communication/messageName';
 interface Message<T extends MessageName> {
     readonly name: T;
@@ -71,7 +70,7 @@ export interface EndGameData {
 }
 export interface EndGameErrorData {
     readonly isValid: false;
-    readonly error: Error;
+    readonly errorMessage: string;
 }
 export interface BroadcastEndGame extends Message<typeof MessageName.BROADCAST_END_GAME> {
     readonly data: EndGameData | EndGameErrorData;
