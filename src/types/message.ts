@@ -11,12 +11,17 @@ interface Message<T extends MessageName> {
 
 export type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn |
   BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastLobbyPlayers |
-  BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
+  BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication |
+  BroadcastOutPlayerAfterTurn;
 
 export type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData |
-  StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[] | RequestCardsData;
+  StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[] | RequestCardsData | OutPlayer;
 
 export type StartGame = Message<typeof MessageName.START_GAME>;
+
+export interface BroadcastOutPlayerAfterTurn extends Message<typeof MessageName.BROADCAST_OUT_PLAYER_AFTER_TURN> {
+  readonly data: OutPlayer;
+}
 
 export interface StartGameData {
   readonly players: PlayerId[];

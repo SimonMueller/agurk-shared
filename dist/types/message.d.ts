@@ -7,9 +7,12 @@ interface Message<T extends MessageName> {
     readonly name: T;
     readonly data?: MessageData;
 }
-export declare type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastLobbyPlayers | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication;
-export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[] | RequestCardsData;
+export declare type GameMessage = StartGame | BroadcastStartGame | RequestCards | PlayCards | BroadcastStartPlayerTurn | BroadcastPlayerTurn | BroadcastStartRound | BroadcastEndRound | BroadcastStartCycle | BroadcastLobbyPlayers | BroadcastEndCycle | BroadcastEndGame | AvailableCardsInHand | Authenticate | RequestAuthentication | BroadcastOutPlayerAfterTurn;
+export declare type MessageData = StartGameData | EndGameData | EndGameErrorData | StartCycleData | EndCycleData | StartRoundData | EndRoundData | PlayerId | Card[] | ValidatedTurn | PlayerId[] | RequestCardsData | OutPlayer;
 export declare type StartGame = Message<typeof MessageName.START_GAME>;
+export interface BroadcastOutPlayerAfterTurn extends Message<typeof MessageName.BROADCAST_OUT_PLAYER_AFTER_TURN> {
+    readonly data: OutPlayer;
+}
 export interface StartGameData {
     readonly players: PlayerId[];
 }
