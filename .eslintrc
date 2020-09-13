@@ -6,6 +6,8 @@
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
     "max-len": ["error", { "code":  120}],
     "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
     "import/extensions": [
